@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^13.5.0",
     "customize-cra": "^1.0.0",
+    "normalize.css": "^8.0.1",
     "react": "^19.2.8",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^19.2.8",
@@ -39,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^5.0.3"
+    "babel-plugin-module-resolver": "^5.0.3",
+    "sass": "^1.104.0"
   }
 }
