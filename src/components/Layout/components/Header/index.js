@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
     faSignOut,
     faSpinner,
     faUser,
@@ -26,6 +24,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AcountItem from '~/components/AcountItem';
 import Menu from '~/components/Popper/Menu';
+import { CommentIcon, ShareIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -134,11 +134,14 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faMessage} />
+                                <ShareIcon />
+                            </button>
+                            <button className={cx('action-btn')}>
+                                <CommentIcon />
                             </button>
                         </>
                     ) : (
@@ -149,7 +152,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://i.pinimg.com/736x/10/be/17/10be17f0f79082fb9859462de86dc81b.jpg"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"

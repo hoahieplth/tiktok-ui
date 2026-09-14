@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --primary-color: #fe2c55;
@@ -21,7 +20,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'TikTokFont';
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -36,6 +35,31 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+// fonts emmbeded
+
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokFont-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokFont-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'TikTokFont';
+    src: url('/assets/fonts/TikTokSans-VF.woff2');
+    font-weight: 100 900;
 }
 //Custom tippy tooltip
 body {
