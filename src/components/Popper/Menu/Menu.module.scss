@@ -10,6 +10,7 @@
 }
 .menu-body {
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
 //menu items
 .menu-item {
