@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +15,7 @@ function AcountItem({ data }) {
             <Image className={cx('avatar')} src={data.image} alt={data.image} />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
-                    <span>{data.lastName}</span>
+                    <span>{data.username}</span>
                     <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                 </h4>
                 <span className={cx('username')}>{data.username}</span>
@@ -22,5 +23,7 @@ function AcountItem({ data }) {
         </Link>
     );
 }
-
+AcountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 export default AcountItem;
