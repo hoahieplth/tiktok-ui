@@ -22,10 +22,11 @@
 
     input {
         flex: 1;
+        height: 100%;
+        padding-right: 40px;
         color: var(--black);
         font-size: 1.6rem;
         caret-color: var(--primary-color);
-        padding: 12px 0;
         background-color: transparent;
         font-family: var(--font-family);
     }
@@ -38,6 +39,7 @@
 }
 .search-title {
     flex-shrink: 0;
+    height: 100%;
     padding: 5px 12px;
     font-size: 1.4rem;
     font-weight: 600;
