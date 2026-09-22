@@ -127,11 +127,10 @@ export const LiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => 
 );
 export const LiveActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
-        className={`css-fd7pre-7937d88b--StyledLiveIcon e14mntpd2 ${className || ''}`}
+        className={`tiktok-xrx4y4 e14mntpd3 ${className || ''}`}
         width={width}
         height={height}
         fill="currentColor"
-        class="tiktok-xrx4y4 e14mntpd3"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
     >
