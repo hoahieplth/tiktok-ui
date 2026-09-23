@@ -1,5 +1,19 @@
+import classNames from 'classnames/bind';
+
+import styles from './Home.module.scss';
+import CategoryTabs from '~/components/CategoryTabs';
+import LiveBanner from '~/components/LiveBanner';
+
+const cx = classNames.bind(styles);
+
 function Home() {
-    return <h2 style={{ height: 2000 }}>Home page</h2>;
+    return (
+        <div className={cx('wrapper')}>
+            <CategoryTabs />
+            <LiveBanner />
+            {/* <LiveSection /> */}
+        </div>
+    );
 }
 
 export default Home;

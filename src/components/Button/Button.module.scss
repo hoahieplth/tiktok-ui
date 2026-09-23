@@ -64,7 +64,38 @@
         text-decoration: underline;
     }
 }
+.categoryTab {
+    width: max-content;
+    flex: 0 0 auto;
 
+    padding: 6px 16px;
+    border-radius: 8px;
+
+    background-color: rgba(22, 24, 35, 0.06);
+
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    white-space: nowrap;
+    user-select: none;
+    text-decoration: none;
+
+    transition: 0.2s;
+
+    &.active {
+        color: #fff;
+        background: #161823;
+        &:hover {
+            background: #161823;
+        }
+    }
+    &:hover {
+        background: #e5e5e5;
+    }
+    + .categoryTab {
+        margin-left: 12px;
+    }
+}
 //Button sizes
 .small {
     min-width: 88px;
