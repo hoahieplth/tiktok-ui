@@ -15,6 +15,7 @@ function Button({
     disabled = false,
     small = false,
     large = false,
+    active,
     children,
     className,
     leftIcon,
@@ -53,6 +54,7 @@ function Button({
         disabled,
         small,
         large,
+        active,
     });
     return (
         <Comp className={classes} {...props}>
@@ -75,6 +77,7 @@ Button.propTypes = {
     small: PropTypes.bool,
     large: PropTypes.bool,
     className: PropTypes.string,
+    active: PropTypes.bool,
     leftIcon: PropTypes.node,
     rightIcon: PropTypes.node,
     onClick: PropTypes.func,

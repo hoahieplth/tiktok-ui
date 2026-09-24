@@ -10,7 +10,7 @@ function CategoryItem({ index, to, title, onClick, activeIndex }) {
 }
 CategoryItem.propTypes = {
     index: PropTypes.number.isRequired,
-    to: PropTypes.string.isRequired,
+    to: PropTypes.string,
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     activeIndex: PropTypes.number.isRequired,

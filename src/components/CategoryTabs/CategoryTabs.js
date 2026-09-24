@@ -51,16 +51,15 @@ function CategoryTabs() {
     // Kiểm tra nút trái / phải
     const checkArrows = () => {
         const element = navRef.current;
-
         if (!element) return;
 
         const { scrollLeft, scrollWidth, clientWidth } = element;
 
-        // Đang ở đầu
-        const isAtStart = scrollLeft <= 1;
+        // Dung sai lớn để chống zoom / sub-pixel
+        const tolerance = 10;
 
-        // Đang ở cuối
-        const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+        const isAtStart = scrollLeft <= tolerance;
+        const isAtEnd = Math.ceil(scrollLeft + clientWidth) >= Math.floor(scrollWidth) - tolerance;
 
         setShowLeftArrow(!isAtStart);
         setShowRightArrow(!isAtEnd);
@@ -80,25 +79,25 @@ function CategoryTabs() {
         });
     };
 
-    // Theo dõi scroll
     useEffect(() => {
         const element = navRef.current;
-
         if (!element) return;
 
-        // Kiểm tra lần đầu
-        checkArrows();
+        // Chạy sau khi layout ổn định
+        const timer = setTimeout(checkArrows, 150);
 
-        // Khi scroll thì kiểm tra lại
         element.addEventListener('scroll', checkArrows);
-
-        // Khi resize màn hình
         window.addEventListener('resize', checkArrows);
 
-        return () => {
-            element.removeEventListener('scroll', checkArrows);
+        // Bắt cả khi zoom
+        const resizeObserver = new ResizeObserver(checkArrows);
+        resizeObserver.observe(element);
 
+        return () => {
+            clearTimeout(timer);
+            element.removeEventListener('scroll', checkArrows);
             window.removeEventListener('resize', checkArrows);
+            resizeObserver.disconnect();
         };
     }, []);
 
