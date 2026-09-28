@@ -1,7 +1,27 @@
 .wrapper {
-    height: calc(0px + 100vh);
     width: 100%;
+    height: 100vh;
     min-width: 470px;
-    overflow: hidden auto;
     padding: 24px 24px 104px;
+}
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+@media (max-width: 1024px) {
+    .live-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .live-grid > :nth-child(n + 5) {
+        display: none;
+    }
+}
+.categroy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.categroy-grid > :nth-child(n + 5) {
+    display: none;
 }

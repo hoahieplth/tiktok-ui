@@ -11,5 +11,6 @@
     display: flex;
 }
 .content {
-    flex: 1;
+    width: calc(var(--default-layout-width) - var(--sidebar-width));
+    flex: 0 0 calc(var(--default-layout-width) - var(--sidebar-width));
 }

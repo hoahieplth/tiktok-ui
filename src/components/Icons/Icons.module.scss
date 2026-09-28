@@ -20,3 +20,57 @@
     line-height: 1.8;
     text-align: center;
 }
+.sound-icon {
+    color: white;
+
+    .bar {
+        transform-origin: center bottom;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+
+    .bar1 {
+        animation-name: bar1;
+    }
+
+    .bar2 {
+        animation-name: bar2;
+        animation-delay: 0.15s;
+    }
+
+    .bar3 {
+        animation-name: bar3;
+        animation-delay: 0.3s;
+    }
+}
+
+@keyframes bar1 {
+    0%,
+    100% {
+        transform: scaleY(0.4);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes bar2 {
+    0%,
+    100% {
+        transform: scaleY(0.55);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes bar3 {
+    0%,
+    100% {
+        transform: scaleY(0.35);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}

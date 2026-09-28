@@ -46,6 +46,54 @@ function CategoryTabs() {
             title: 'Minecraft',
             to: config.routes.minecraft,
         },
+        {
+            title: 'Garena Free Fire',
+            to: config.routes.freefire,
+        },
+        {
+            title: 'Fortnite',
+            to: config.routes.fortnite,
+        },
+        {
+            title: 'Minecraft',
+            to: config.routes.minecraft,
+        },
+        {
+            title: 'Garena Free Fire',
+            to: config.routes.freefire,
+        },
+        {
+            title: 'Fortnite',
+            to: config.routes.fortnite,
+        },
+        {
+            title: 'Minecraft',
+            to: config.routes.minecraft,
+        },
+        {
+            title: 'Garena Free Fire',
+            to: config.routes.freefire,
+        },
+        {
+            title: 'Fortnite',
+            to: config.routes.fortnite,
+        },
+        {
+            title: 'Minecraft',
+            to: config.routes.minecraft,
+        },
+        {
+            title: 'Garena Free Fire',
+            to: config.routes.freefire,
+        },
+        {
+            title: 'Fortnite',
+            to: config.routes.fortnite,
+        },
+        {
+            title: 'Minecraft',
+            to: config.routes.minecraft,
+        },
     ];
 
     // Kiểm tra nút trái / phải
@@ -78,7 +126,6 @@ function CategoryTabs() {
             behavior: 'smooth',
         });
     };
-
     useEffect(() => {
         const element = navRef.current;
         if (!element) return;
@@ -100,7 +147,6 @@ function CategoryTabs() {
             resizeObserver.disconnect();
         };
     }, []);
-
     return (
         <div className={cx('wrapper')}>
             {/* NÚT TRÁI */}
@@ -114,11 +160,11 @@ function CategoryTabs() {
             <div className={cx('categories')} ref={navRef}>
                 {categories.map((category, index) => (
                     <CategoryItem
-                        key={category.title}
+                        key={index}
                         to={category.to}
                         title={category.title}
                         index={index}
-                        activeIndex={activeIndex}
+                        active={activeIndex === index}
                         onClick={() => setActiveIndex(index)}
                     />
                 ))}
