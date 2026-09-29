@@ -9,7 +9,7 @@ export const getVideos = async (q = 'gaming') => {
                 per_page: 10,
             },
         });
-        return res.data.hits;
+        return res.data.hits || [];
     } catch (error) {
         console.log('STATUS:', error.response?.status);
         console.log('PIXABAY ERROR:', error.response?.data);

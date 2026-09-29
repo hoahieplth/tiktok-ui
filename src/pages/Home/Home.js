@@ -19,7 +19,7 @@ function Home() {
             try {
                 const result = await videoService.getVideos('gaming');
 
-                setVideos(result?.hits || result || []);
+                setVideos(Array.isArray(result) ? result : []);
             } catch (error) {
                 console.error(error);
             } finally {

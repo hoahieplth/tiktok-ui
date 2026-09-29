@@ -16,7 +16,7 @@ function SuggestedAccounts({ label }) {
         const fetchApi = async () => {
             try {
                 const data = await searchServices.search();
-                setUsers(data || []);
+                setUsers(Array.isArray(data) ? data : []);
             } catch (error) {
                 console.error(error);
                 setUsers([]);
