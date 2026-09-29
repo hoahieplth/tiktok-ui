@@ -10,7 +10,7 @@ function CategorySectionItem({ data }) {
     return (
         <div>
             <div className={cx('item')}>
-                <Tippy content={data.type} placement="bottom" interactive={true}>
+                <Tippy content={data.type} placement="bottom" offset={[30, -70]} arrow={false} interactive={true}>
                     <div className={cx('thumb-img')}>
                         <img src={data.videos.medium.thumbnail} alt="data.type" />
                     </div>

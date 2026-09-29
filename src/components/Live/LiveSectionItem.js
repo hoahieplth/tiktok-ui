@@ -10,9 +10,16 @@ function LiveSectionItem({ data }) {
     const videoRef = useRef(null);
     const [isHover, setIsHover] = useState(false);
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = async () => {
         setIsHover(true);
-        videoRef.current?.play();
+        try {
+            await videoRef.current?.play();
+        } catch (error) {
+            // Bỏ qua lỗi "play() was interrupted by pause()"
+            if (error.name !== 'AbortError') {
+                console.error(error);
+            }
+        }
     };
 
     const handleMouseLeave = () => {
