@@ -17,8 +17,6 @@ function SuggestedAccounts({ label }) {
             try {
                 const data = await searchServices.search();
 
-                console.log('USERS:', data);
-
                 setUsers(Array.isArray(data) ? data : []);
             } catch (error) {
                 console.error('USERS ERROR:', error);

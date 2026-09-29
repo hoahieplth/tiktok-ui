@@ -19,10 +19,6 @@ function Home() {
             try {
                 const result = await videoService.getVideos('gaming');
 
-                console.log('RESULT:', result);
-                console.log('IS ARRAY:', Array.isArray(result));
-                console.log('LENGTH:', result?.length);
-
                 setVideos(Array.isArray(result) ? result : []);
             } catch (error) {
                 console.error('VIDEO ERROR:', error);
