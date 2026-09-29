@@ -16,16 +16,18 @@ function SuggestedAccounts({ label }) {
         const fetchApi = async () => {
             try {
                 const data = await searchServices.search();
+
+                console.log('USERS:', data);
+
                 setUsers(Array.isArray(data) ? data : []);
             } catch (error) {
-                console.error(error);
+                console.error('USERS ERROR:', error);
                 setUsers([]);
             }
         };
 
         fetchApi();
     }, []);
-
     const displayedUsers = showAll ? users : users.slice(0, 5);
     return (
         <div className={cx('wrapper')}>
