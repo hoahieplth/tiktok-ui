@@ -13,12 +13,19 @@ function SuggestedAccounts({ label }) {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        const fethApi = async () => {
-            const data = await searchServices.search();
-            setUsers(data);
+        const fetchApi = async () => {
+            try {
+                const data = await searchServices.search();
+                setUsers(data || []);
+            } catch (error) {
+                console.error(error);
+                setUsers([]);
+            }
         };
-        fethApi();
+
+        fetchApi();
     }, []);
+
     const displayedUsers = showAll ? users : users.slice(0, 5);
     return (
         <div className={cx('wrapper')}>
